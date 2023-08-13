@@ -1,0 +1,307 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');*/
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./fonts/Quicksand/Quicksand-Bold.woff2') format('woff2'),
+      url('./fonts/Quicksand/Quicksand-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./fonts/Quicksand/Quicksand-SemiBold.woff2') format('woff2'),
+      url('./fonts/Quicksand/Quicksand-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./fonts/Quicksand/Quicksand-Medium.woff2') format('woff2'),
+      url('./fonts/Quicksand/Quicksand-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./fonts/Quicksand/Quicksand-Regular.woff2') format('woff2'),
+      url('./fonts/Quicksand/Quicksand-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./fonts/Quicksand/Quicksand-Light.woff2') format('woff2'),
+      url('./fonts/Quicksand/Quicksand-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+:root {
+  box-sizing: border-box;
+  --size-box: min(max(30rem, 100%), 60rem);
+  --size-mini: min(max(15rem, 100%), 30rem);
+  --size-w: 30rem;
+  --main-size: 60rem; /* 960px */
+  font-family: 'Quicksand', sans-serif;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.flex-top-box {
+  width: min(max(var(--main-size), 100%), calc(var(--main-size) * 2));
+  min-height: var(--main-size);
+  border: 1px solid black;
+  background-color: #D2DAED;
+  background-color: #EA906C;
+  display: flex;
+  flex-flow: row wrap;
+}
+.flex-box {
+  min-height: 2.5rem;
+  flex: 1 0 50%;
+  display: flex;
+  flex-flow: row wrap;
+  /*border: 1px solid goldenrod;*/
+}
+
+/*
+  main-container and container for centering
+  without affecting zoom
+*/
+.main-container {
+  display: flex;
+  height: 100vh;
+}
+.container {
+  margin: auto auto;
+  flex: 0 0 auto;
+}
+.sidebar {
+  flex: 0 0 15%;
+  justify-content: center;
+  /*background-image: url('./images/book-pile.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-attachment: fixed;*/
+}
+.controls {
+  flex: 0 0 100%;
+  text-align: center;
+}
+.controls > h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.add-book {
+  position: sticky;
+  top: 1rem;
+  display: inline-block;
+  width: 7rem;
+  height: 7rem;
+  padding: 0;
+  background-color: transparent;
+  background-image: url('./images/book-plus.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+}
+.add-book:hover {
+	cursor: pointer;
+  background-image: url('./images/book-plus-blue.svg');
+}
+.add-book:active {
+	
+}
+.add-book:focus {
+  outline: none;
+  border-bottom: 0.06rem solid black;
+}
+#new-book {
+  border-radius: 2rem;
+  background-color: #EEE2DE;
+}
+#new-book fieldset {
+  border-radius: 1rem;
+}
+#new-book input[type='text'],
+#new-book input[type='number'] {
+  border: none;
+  border-bottom: 0.125rem solid black;
+  background-color: transparent;
+}
+#new-book input[type='checkbox'] {
+  border: 0.125rem solid black;
+  border-radius: 1rem;
+  background-color: transparent;
+}
+#new-book input[type='text']:focus,
+#new-book input[type='number']:focus,
+#new-book input[type='checkbox'] {
+  outline: none;
+}
+#new-book input[type='text']:active {
+  
+}
+#confirm-btn, #cancel  {
+  font-family: inherit;
+  font-size: 2rem;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  margin-left: 1rem;
+}
+#confirm-btn:hover, #cancel:hover {
+  cursor: pointer;
+  color: #2280c9;
+}
+
+.fields {
+  flex: 0 0 100%;
+  align-items: center;
+}
+.fields > label {
+  flex: 0 0 15%;
+  font-size: 1.2rem;
+}
+.fields > input {
+  flex: 5 0 50%;
+  font-size: 1.2rem;
+}
+.fields:last-child > input {
+  margin: 0;
+  flex: 0 0 auto;
+  appearance: none;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border: 0.06rem solid black;
+}
+.fields:last-child > input:checked {
+  /*box-shadow: inset 0rem 0rem .5rem white;*/
+  border: transparent;
+  /*background-color: black;*/
+  background-image: url('./images/check-circle.svg');
+  background-size: contain;
+}
+.fields:last-child > input::before {
+  /*content: "✔";*/
+  content: '';
+  position: absolute;
+  font-size: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  right: 0px;
+  top: 0px;
+  visibility: hidden;
+}
+.fields:last-child > input:checked::before {
+  visibility: visible;
+}
+
+.book-panel {
+  padding: 2rem;
+  background-image: url('./images/book-pile.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  /*background-image: url('./images/book-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;*/
+  /*background-color: transparent;*/
+}
+.book-list {
+  gap: 1rem;
+}
+.card {
+  width: 100%;
+  height: 15rem;
+  padding: 1rem;
+  background-color: #eee;
+  border-radius: 1rem;
+  box-shadow: .25rem .3rem .5rem #888;
+  flex: 0 0 100%;
+  position: relative;
+}
+.card:hover {
+  background-color: #fff;
+  background-color: #EEE2DE;
+  box-shadow: .25rem .3rem 1rem #888;
+}
+.card > div:first-child {
+  min-height: 70%;
+  flex: 0 0 90%;
+}
+.card > div:last-child {
+  flex: 0 0 100%;
+  align-items: center;
+  /*background-color: aqua;*/
+}
+.card > div:last-child > p {
+  flex: 0 0 20%;
+}
+.card > div:last-child > button {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background-color: transparent;
+  /*background-image: url('./images/add-ring.svg');*/
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+}
+.card > div:last-child > button:hover {
+  cursor: pointer;
+}
+.card > div:last-child > button:focus {
+  outline: none;
+  border-bottom: 0.06rem solid black;
+}
+.card > div:last-child > button:active {
+  outline: none;
+  /*border: 0.06rem solid black;*/
+}
+.toggle-read {
+  background-image: url('./images/book-check.svg')
+}
+.toggle-read:hover {
+  background-image: url('./images/book-check-blue.svg')
+}
+.remove-book {
+  background-image: url('./images/x-red.svg');
+  position: absolute;
+  right: 1%;
+  top: 1%;
+}
+.card > div:last-child > button::before {
+  content: '';
+  position: absolute;
+}
+.card h4, .card p {
+  font-weight: normal;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.card h4 {
+  font-size: 3rem;
+}
+.card h4 + p {
+  font-size: 1.2rem;
+}

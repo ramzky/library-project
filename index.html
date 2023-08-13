@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <div class="main-container">
+    <div class="flex-top-box container">
+
+      <div class="flex-box sidebar" >
+        <div class="controls">
+          <h1>Library</h1>
+          <button type="button" class="add-book"></button>
+        </div>
+
+        <dialog id="new-book">
+          <form>
+            <fieldset>
+              <legend>
+                Add your book!
+              </legend>
+              <div class="flex-box">
+                <div class="flex-box fields">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" required/>
+                </div>
+                <div class="flex-box fields">
+                  <label for="author">Author</label>
+                  <input type="text" id="author" />
+                </div>
+                <div class="flex-box fields">
+                  <label for="page">Page</label>
+                  <input type="number" id="page" />
+                </div>
+                <div class="flex-box fields">
+                  <label for="to-read">Done reading?</label>
+                  <input type="checkbox" id="to-read" />
+                </div>
+              </div>
+              
+            </fieldset>
+            <div>
+              <button id="confirm-btn" formmethod="dialog">Add</button>
+              <button id="cancel" value="cancel" >Cancel</button>
+            </div>
+          </form>
+        </dialog>
+
+      </div>
+
+      <div class="flex-box book-panel">
+        <div class="flex-box book-list">
+          <!--<div class="card flex-box">
+            <div>
+              <h4>title</h4>
+              <p>author</p>
+              <p>3 pages</p>
+            </div>
+            <div class="flex-box">
+              <button type="button" class="toggle-read"></button>
+              <p>to read</p>
+              <button type="button" class="remove-book"></button>
+            </div>
+          </div>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
